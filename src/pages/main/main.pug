@@ -7,7 +7,8 @@ block variables
   - let pageClassName = 'main-page';
 
 block styles
-  link(href=require('./main.scss') rel='stylesheet')
+  link(rel="preload" href=require('Fonts/ProximaNova-Condensed-Semibold.woff2') as="font")
+  link(rel='stylesheet' href=require('./main.scss'))
 block content
   main.page__main(class=pageClassName)
 block scripts
