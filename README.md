@@ -11,25 +11,25 @@ Test task
 
 ---
 
-1. [Клонирование репозитория](#a-namerepo-clone-клонирование-репозитория-a)
-2. [Версионность](#a-nameversions-версионность-a)
-3. [Работа с npm](#a-namenpmcommands-работа-с-npm-a)
-4. [Файловая структура](#a-namefile-structure-файловая-структура-a)
-5. [Alias'ы](#a-namealias-aliasы-a)
-6. [Советы и правила](#a-nametips-and-rules-советы-и-правила-a)
+1. [Клонирование репозитория](#clone)
+2. [Версионность](#versions)
+3. [Scripts](#npmcommands)
+4. [Файловая структура](#structure)
+5. [Alias'ы](#aliases)
+6. [Советы и правила](#tips-and-rules)
 
 ---
 
-## <a name='repo-clone'>Клонирование репозитория</a>
+## <a id='clone'>Клонирование репозитория</a>
 
     git clone -b main git@github.com:hellsgor/softline.git
 
-## <a name='versions'>Версионность</a>
+## <a id='versions'>Версионность</a>
 
 - node js - 20.9.0
 - npm - 10.1.0
 
-## <a name='npmcommands'>Работа с npm</a>
+## <a id='npmcommands'>Scripts</a>
 
 - установка пакетов - `npm i`;
 - запуск dev-сервера - `npm start`;
@@ -38,7 +38,7 @@ Test task
 - predeploy - `npm run build`,
 - deploy - `gh-pages -d build`;
 
-## <a name='file-structure'>Файловая структура</a>
+## <a id='structure'>Файловая структура</a>
 
 - src/
   - assets/
@@ -61,7 +61,7 @@ Test task
   - utils/ - части js-кода используемые в проекте вынесены в отдельную папку,
     например, отправка или валидация полей формы и пр.
 
-## <a name='alias'>Alias'ы</a>
+## <a id='aliases'>Alias'ы</a>
 
 - Img - './src/assets/image/';
 - Icons - './src/assets/icons/';
@@ -74,7 +74,7 @@ Test task
 - NodeModules - './node_modules/';
 - Utils - './src/utils/';
 
-## <a name='tips-and-rules'>Советы и правила</a>
+## <a id='tips-and-rules'>Советы и правила</a>
 
 - файлы ".gitkeep" следует удалить если в папке-родителе появятся файлы проекта.
   Файлы ".gitkeep" требуются исключительно для сохранения файловой структуры в
