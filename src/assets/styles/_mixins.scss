@@ -2,26 +2,26 @@
   box-shadow: $some-shadow;
 }
 
-@mixin media-1024 {
-  @media (max-width: $horizontal-tablet) {
+@mixin media-large {
+  @media (max-width: $large) {
     @content;
   }
 }
 
-@mixin media-768 {
-  @media (max-width: $vertical-tablet) {
+@mixin media-medium {
+  @media (max-width: $medium) {
     @content;
   }
 }
 
-@mixin media-576 {
-  @media (max-width: $mobile) {
+@mixin media-small {
+  @media (max-width: $small) {
     @content;
   }
 }
 
-@mixin media-375 {
-  @media (max-width: $mobile-s) {
+@mixin media-extra-small {
+  @media (max-width: $extra-small) {
     @content;
   }
 }
