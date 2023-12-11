@@ -1,0 +1,9 @@
+mixin button(buttonID, href, buttonType, buttonText)
+  if href
+    a.button(
+      href=href,
+      id=buttonID)&attributes(attributes) #{buttonText}
+  else
+    button.button(
+      type=buttonType,
+      id=buttonID)&attributes(attributes) #{buttonText}
