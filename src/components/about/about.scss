@@ -1,0 +1,38 @@
+.about {
+  margin-bottom: 100px;
+
+  &__wrapper {
+    padding: 0 70px;
+
+    @include media-small {
+      padding: 0;
+    }
+  }
+
+  &__text {
+    padding: 100px 110px;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 120%;
+    background-color: $white-1;
+    @include shadow($shadow-about);
+
+    &_accented {
+      color: $accent;
+    }
+
+    @include media-medium {
+      font-size: 24px;
+    }
+
+    @include media-small {
+      padding: 24px 5px;
+      font-size: 16px;
+    }
+  }
+
+  @include media-small {
+    margin-bottom: 50px;
+  }
+}
