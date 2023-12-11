@@ -43,7 +43,15 @@
     }
 
     @include media-medium {
+      width: 100%;
+      justify-content: space-between;
       row-gap: 5px;
+    }
+
+    @include media-small {
+      width: unset;
+      justify-content: flex-start;
+      column-gap: 10px;
     }
   }
 }
