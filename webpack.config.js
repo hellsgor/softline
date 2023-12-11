@@ -87,7 +87,7 @@ module.exports = {
         loader: PugPlugin.loader,
       },
       {
-        test: /\.(png|jpg|jpeg|svg|ico)/,
+        test: /\.(png|jpg|jpeg|svg|ico|webp)/,
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][ext]',
