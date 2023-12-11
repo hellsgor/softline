@@ -60,7 +60,7 @@ Test task
 
 ## <a id='aliases'>Alias'ы</a>
 
-- Img - './src/assets/image/';
+- Images - './src/assets/image/';
 - Icons - './src/assets/icons/';
 - Fonts - './src/assets/fonts/';
 - Components - './src/components/';
