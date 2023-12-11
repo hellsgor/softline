@@ -5,3 +5,17 @@
 @import 'Styles/fonts';
 @import 'Styles/typography';
 @import 'Styles/visually-hidden';
+
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  @include media-small {
+    max-width: 91%;
+  }
+
+  @include media-extra-small {
+    max-width: 290px;
+  }
+}
