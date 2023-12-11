@@ -11,5 +11,6 @@ block styles
   link(rel='stylesheet' href=require('./main.scss'))
 block content
   main.page__main(class=pageClassName)
+    include Components/banner/banner.pug
 block scripts
   script(src=require('./main.js') defer)
