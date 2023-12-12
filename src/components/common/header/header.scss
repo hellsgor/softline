@@ -3,7 +3,7 @@
 .header {
   &__wrapper {
     display: flex;
-    padding: 30px 70px;
+    padding: 29px 70px;
     border: 1px solid $gray-1;
     flex-wrap: wrap;
     align-items: center;
@@ -11,7 +11,7 @@
     row-gap: 16px;
 
     @include media-large {
-      padding: 16px 5px;
+      padding: 15px 5px;
     }
 
     @include media-medium {

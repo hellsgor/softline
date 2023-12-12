@@ -2,6 +2,12 @@
   box-shadow: $some-shadow;
 }
 
+@mixin media-x-large {
+  @media (max-width: $x-large) {
+    @content;
+  }
+}
+
 @mixin media-large {
   @media (max-width: $large) {
     @content;

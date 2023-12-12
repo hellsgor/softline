@@ -1,0 +1,9 @@
+mixin advantages-item(itemContent)
+  .advantages-item
+    .advantages-item__title-wrapper
+      if (itemContent.prefix)
+        span.advantages-item__prefix.glyphs #{itemContent.prefix}
+      span.advantages-item__title #{itemContent.title}
+      if (itemContent.postfix)
+        span.advantages-item__postfix #{itemContent.postfix}
+    p.advantages-item__description #{itemContent.description}
