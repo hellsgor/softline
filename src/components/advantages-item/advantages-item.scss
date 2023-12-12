@@ -1,0 +1,32 @@
+.advantages-item {
+  display: flex;
+  width: fit-content;
+  max-width: 243px;
+  flex-direction: column;
+  row-gap: 6px;
+
+  &__title-wrapper {
+    display: flex;
+    opacity: .95;
+    align-items: center;
+    column-gap: 10px;
+    font-weight: 600;
+    color: $accent-2;
+
+  }
+
+  &__title {
+    font-size: 80px;
+    line-height: 80%;
+  }
+
+  &__postfix {
+    font-size: 64px;
+    line-height: 100%;
+  }
+
+  &__description {
+    max-width: 206px;
+    line-height: 114%;
+  }
+}
