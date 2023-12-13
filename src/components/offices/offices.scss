@@ -57,4 +57,11 @@
     justify-content: flex-end;
     column-gap: 30px;
   }
+
+  &__map {
+    width: 100%;
+    height: 600px;
+    background: url("Images/map.svg") center no-repeat;
+    background-size: contain;
+  }
 }
