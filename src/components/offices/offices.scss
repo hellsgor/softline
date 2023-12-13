@@ -59,9 +59,44 @@
   }
 
   &__map {
+    position: relative;
     width: 100%;
     height: 600px;
     background: url("Images/map.svg") center no-repeat;
     background-size: contain;
+  }
+
+  &__city-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-2;
+    background-color: $black-1;
+  }
+
+  &__city-point-name {
+    position: absolute;
+    left: 50%;
+    font-weight: 600;
+    line-height: 100%;
+    white-space: nowrap;
+    transform: translateX(-50%);
+
+    @mixin modifierStyles($font-size, $indent) {
+      font-size: $font-size;
+      bottom: -(calc($font-size + $indent));
+    }
+
+    &_small {
+      @include modifierStyles(12px, 2px);
+    }
+
+    &_medium {
+      @include modifierStyles(14px, 2px);
+    }
+
+    &_large {
+      @include modifierStyles(16px, 4px);
+    }
   }
 }

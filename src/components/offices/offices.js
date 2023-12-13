@@ -1,6 +1,8 @@
 import {createTab} from 'Components/offices/_create-tab';
 import {offices} from 'Mocs/offices';
+import {createCityPoint} from 'Components/offices/_create-city-point';
 
+const map = document.getElementById('offices-map');
 const tabsBlock = document.getElementById('offices-regions');
 const ollRegionsTab = createTab('Все');
 
@@ -13,3 +15,7 @@ offices
   .forEach((region) => {
     tabsBlock.appendChild(createTab(region));
   });
+
+offices.forEach((region) => {
+  map.appendChild(createCityPoint(region));
+});
