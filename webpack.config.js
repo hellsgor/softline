@@ -56,6 +56,7 @@ module.exports = {
       Libs: path.join(__dirname, './src/libs/'),
       NodeModules: path.join(__dirname, './node_modules/'),
       Utils: path.join(__dirname, './src/utils/'),
+      Mocs: path.join(__dirname, './src/assets/mocs'),
     },
   },
   plugins: [

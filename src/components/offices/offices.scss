@@ -1,0 +1,60 @@
+.offices {
+  margin-bottom: 100px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 90px;
+  }
+
+  &__header {
+    display: flex;
+    padding: 28px 70px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white-1;
+    @include shadow($shadow-offices-header);
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $accent-hover;
+
+        svg path {
+          stroke: $accent-hover;
+        }
+      }
+    }
+  }
+
+  &__select-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__select-arrow {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+
+    svg path {
+      transition: stroke .3s ease-in-out;
+    }
+  }
+
+  &__regions {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 30px;
+  }
+}
