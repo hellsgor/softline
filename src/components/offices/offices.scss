@@ -5,15 +5,40 @@
     display: flex;
     flex-direction: column;
     row-gap: 90px;
+
+    @include media-large {
+      row-gap: 40px;
+    }
+
+    @include media-small {
+      row-gap: 8px;
+    }
   }
 
   &__header {
     display: flex;
-    padding: 28px 70px;
+    padding: 28px 70px 28px;
     align-items: center;
     justify-content: space-between;
     background-color: $white-1;
     @include shadow($shadow-offices-header);
+
+    @include media-x-large {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 20px;
+    }
+
+    @include media-large {
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+
+    @include media-small {
+      padding-top: 16px;
+      row-gap: 17px;
+    }
   }
 
   &__select {
@@ -32,23 +57,51 @@
         }
       }
     }
+
+    @include media-large {
+      padding-left: 70px;
+    }
+
+    @include media-medium {
+      column-gap: 6px;
+    }
+
+    @include media-small {
+      padding-left: 24px;
+    }
+
+    @include media-extra-small {
+      padding-left: 5px;
+      column-gap: 5px;
+    }
   }
 
   &__select-title {
     font-size: 24px;
     font-weight: 600;
     line-height: 100%;
+
+    @include media-medium {
+      font-size: 20px;
+    }
   }
 
   &__select-arrow {
     display: flex;
-    width: 24px;
-    height: 24px;
+    $size: 24px;
+    width: $size;
+    height: $size;
     align-items: center;
     justify-content: center;
 
-    svg path {
-      transition: stroke .3s ease-in-out;
+    svg {
+      overflow: hidden;
+      width: $size;
+      height: $size;
+
+      path {
+        transition: stroke .3s ease-in-out;
+      }
     }
   }
 
@@ -56,14 +109,77 @@
     display: flex;
     justify-content: flex-end;
     column-gap: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media-x-large {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include media-large {
+      overflow-x: scroll;
+      height: 48px;
+      padding-right: 70px;
+      padding-left: 70px;
+      justify-content: flex-start;
+    }
+
+    @include media-small {
+      height: 38px;
+      padding-right: 24px;
+      padding-left: 24px;
+      column-gap: 16px;
+    }
+
+    @include media-extra-small {
+      height: 38px;
+      padding-right: 5px;
+      padding-left: 5px;
+      column-gap: 17px;
+    }
+  }
+
+  &__map-wrapper {
+    overflow-x: scroll;
+    width: 100%;
+    height: 610px;
+    padding: 0 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media-medium {
+      height: 448px;
+    }
   }
 
   &__map {
     position: relative;
-    width: 100%;
+    width: 1190px;
     height: 600px;
-    background: url("Images/map.svg") center no-repeat;
+    background: url("Images/map.svg") top left no-repeat;
     background-size: contain;
+
+    @include media-x-large {
+      width: 1140px;
+    }
+
+    @include media-medium {
+      width: 862px;
+      height: 434px;
+    }
+
+    @include media-extra-small {
+      //background-position-x: -35px;
+    }
   }
 
   &__city-point {
@@ -84,19 +200,40 @@
 
     @mixin modifierStyles($font-size, $indent) {
       font-size: $font-size;
-      bottom: -(calc($font-size + $indent));
+
+      &[data-point-name="khabarovsk"],
+      &[data-point-name="tomsk"] {
+        top: -(calc(14px + 2px));
+      }
+
+      &:not([data-point-name="khabarovsk"]),
+      &:not([data-point-name="tomsk"]) {
+        bottom: -(calc($font-size + $indent));
+      }
     }
 
     &_small {
-      @include modifierStyles(12px, 2px);
+      @include modifierStyles(12px, 4px);
     }
 
     &_medium {
-      @include modifierStyles(14px, 2px);
+      @include modifierStyles(14px, 4px);
     }
 
     &_large {
-      @include modifierStyles(16px, 4px);
+      @include modifierStyles(16px, 5px);
     }
+
+    &[data-point-name="kaliningrad"] {
+      @include modifierStyles(12px, 6px);
+    }
+  }
+
+  @include media-large {
+    margin-bottom: 20px;
+  }
+
+  @include media-extra-small {
+    margin-bottom: -20px;
   }
 }

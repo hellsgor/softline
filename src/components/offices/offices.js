@@ -19,3 +19,9 @@ offices
 offices.forEach((region) => {
   map.appendChild(createCityPoint(region));
 });
+
+if (document.documentElement.scrollWidth <= 375) {
+  console.log(123);
+  // map.scrollTo(500, 0);
+  map.closest('.offices__map-wrapper').scrollTo(35, 0);
+}
