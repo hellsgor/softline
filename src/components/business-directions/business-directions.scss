@@ -1,8 +1,11 @@
+@import 'Components/business-direction-card/business-direction-card.scss';
+
 .business-directions {
   margin-bottom: 100px;
 
   &__wrapper {
     display: flex;
+    margin-left: -5px;
     flex-direction: column;
     align-items: center;
     row-gap: 55px;
@@ -10,6 +13,13 @@
     h2 {
       text-align: center;
     }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 22px;
   }
 
   @include media-extra-small {
