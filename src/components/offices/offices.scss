@@ -1,5 +1,21 @@
 .offices {
   $dropdown-cities-row-gap: 16px;
+  $dropdown-move-top: 800px;
+
+  $dropdown-padding: (
+    x-large: 70px,
+    large: 70px,
+    small: 24px,
+    extra-small: 5px
+  );
+
+  $dropdown-top: (
+    default: 99px,
+    x-large: 141px,
+    large: 0px,
+    small: 0px,
+    extra-small: 0px
+  );
 
   margin-bottom: 100px;
 
@@ -234,22 +250,61 @@
     }
   }
 
+
   &__dropdown {
     position: absolute;
-    top: 99px;
+    top: map-get($dropdown-top, default);
     right: 0;
     left: 0;
-    z-index: 300;
+    z-index: 290;
     display: flex;
-    padding: 30px 10px;
+    padding: 30px map-get($dropdown-padding, default);
     justify-content: center;
     @include shadow($shadow-offices-dropdown);
     column-gap: 24px;
     background-color: $white-1;
-    transition: top .3s ease-in-out;
+    transition: top 0.3s ease-in-out;
 
     &_move {
-      top: 800px;
+      top: $dropdown-move-top;
+    }
+
+    @include media-x-large {
+      top: map-get($dropdown-top, x-large);
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+
+    @include media-large {
+      top: map-get($dropdown-top, large);
+      padding: 73px map-get($dropdown-padding, large) 30px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      row-gap: 15px;
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+
+    @include media-small {
+      top: map-get($dropdown-top, small);
+      padding: 53px 24px map-get($dropdown-padding, small);
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+
+    @include media-extra-small {
+      top: map-get($dropdown-top, extra-small);
+      padding: 53px 5px 15px;
+
+      &_move {
+        top: $dropdown-move-top;
+      }
     }
   }
 
@@ -260,15 +315,22 @@
     font-size: 18px;
     line-height: 20px;
     row-gap: $dropdown-cities-row-gap;
+
+    @include media-small {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   &__dropdown-cities {
     display: flex;
+    overflow-y: hidden;
     flex-direction: column;
     row-gap: $dropdown-cities-row-gap;
 
     @include media-large {
       display: none;
+      height: 0;
     }
   }
 
@@ -277,6 +339,7 @@
     align-items: center;
     column-gap: 3px;
     font-weight: 600;
+    cursor: pointer;
 
     &::after {
       display: none;
@@ -288,6 +351,16 @@
 
       @include media-large {
         display: block;
+      }
+    }
+
+    @media(hover: hover) {
+      &:hover {
+        color: $accent-hover;
+
+        &::after {
+          background-image: url("Icons/dropdown-item-arrow-hovered.svg");
+        }
       }
     }
   }
@@ -307,7 +380,6 @@
       background-color: transparent;
     }
   }
-
 
   @include media-large {
     margin-bottom: 20px;
