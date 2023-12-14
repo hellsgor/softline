@@ -365,6 +365,20 @@
     }
   }
 
+  &__dropdown-city {
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    @media (hover: hover) {
+      &:hover {
+        color: $accent-hover;
+      }
+    }
+
+    &:active {
+      color: $accent;
+    }
+  }
+
   &__backdrop {
     position: fixed;
     top: 0;

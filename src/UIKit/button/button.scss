@@ -39,6 +39,10 @@
       }
     }
 
+    &:active {
+      color: $accent;
+    }
+
     @include media-small {
       min-width: unset;
       font-size: 14px;
