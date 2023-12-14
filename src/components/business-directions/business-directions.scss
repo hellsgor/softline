@@ -1,3 +1,5 @@
+@import 'Components/business-direction-card/business-direction-card.scss';
+
 .business-directions {
   margin-bottom: 100px;
 
@@ -10,9 +12,43 @@
     h2 {
       text-align: center;
     }
+
+    @include media-x-large {
+      padding: 0 10px;
+    }
+
+    @include media-small {
+      padding: 0 5px;
+      row-gap: 15px;
+    }
   }
 
-  @include media-extra-small {
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 22px;
+
+    @include media-small {
+      row-gap: 10px;
+    }
+  }
+
+  &__card {
+    $indents: 1;
+    $indents-width: 20px;
+
+    width: calc((100% - ($indents * $indents-width)) / ($indents + 1));
+
+    @include media-small {
+      $indents: 0;
+      $indents-width: 20px;
+
+      width: calc((100% - ($indents * $indents-width)) / ($indents + 1));
+    }
+  }
+
+  @include media-large {
     margin-bottom: 50px;
   }
 }
