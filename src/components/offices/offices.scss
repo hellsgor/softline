@@ -148,7 +148,7 @@
 
     @include media-large {
       overflow-x: scroll;
-      height: 48px;
+      height: 49px;
       padding-right: 70px;
       padding-left: 70px;
       justify-content: flex-start;
@@ -323,14 +323,19 @@
   }
 
   &__dropdown-cities {
-    display: flex;
+    display: none;
     overflow-y: hidden;
+    height: 0;
     flex-direction: column;
+    transition: height .3s ease-in-out;
     row-gap: $dropdown-cities-row-gap;
 
-    @include media-large {
-      display: none;
-      height: 0;
+    &_visible {
+      height: 100%;
+    }
+
+    &_flexible {
+      display: flex;
     }
   }
 
@@ -341,18 +346,21 @@
     font-weight: 600;
     cursor: pointer;
 
-    &::after {
-      display: none;
-      width: 8px;
-      height: 5px;
-      background: url("Icons/dropdown-item-arrow.svg") center no-repeat;
-      background-size: 8px 5px;
-      content: '';
+    &:not([data-region-name="moskva"]) {
+      &::after {
+        display: none;
+        width: 8px;
+        height: 5px;
+        background: url("Icons/dropdown-item-arrow.svg") center no-repeat;
+        background-size: 8px 5px;
+        content: '';
 
-      @include media-large {
-        display: block;
+        @include media-large {
+          display: block;
+        }
       }
     }
+
 
     @media(hover: hover) {
       &:hover {
@@ -400,6 +408,6 @@
   }
 
   @include media-extra-small {
-    margin-bottom: -20px;
+    margin-bottom: -34px;
   }
 }
