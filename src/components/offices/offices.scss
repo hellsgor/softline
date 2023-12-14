@@ -1,4 +1,6 @@
 .offices {
+  $dropdown-cities-row-gap: 16px;
+
   margin-bottom: 100px;
 
   &__wrapper {
@@ -16,6 +18,7 @@
   }
 
   &__header {
+    position: relative;
     display: flex;
     padding: 28px 70px 28px;
     align-items: center;
@@ -42,6 +45,7 @@
   }
 
   &__select {
+    z-index: 300;
     display: flex;
     align-items: center;
     column-gap: 16px;
@@ -93,6 +97,7 @@
     height: $size;
     align-items: center;
     justify-content: center;
+    transition: transform .1s ease-in-out;
 
     svg {
       overflow: hidden;
@@ -102,6 +107,10 @@
       path {
         transition: stroke .3s ease-in-out;
       }
+    }
+
+    &_rotate {
+      transform: rotate(180deg);
     }
   }
 
@@ -176,10 +185,6 @@
       width: 862px;
       height: 434px;
     }
-
-    @include media-extra-small {
-      //background-position-x: -35px;
-    }
   }
 
   &__city-point {
@@ -228,6 +233,77 @@
       @include modifierStyles(12px, 6px);
     }
   }
+
+  &__dropdown {
+    position: absolute;
+    right: 0;
+    bottom: -316px;
+    left: 0;
+    z-index: 300;
+    display: flex;
+    padding: 30px 10px;
+    justify-content: center;
+    @include shadow($shadow-offices-dropdown);
+    column-gap: 24px;
+    background-color: $white-1;
+    transition: bottom .3s ease-in-out;
+
+    &_move {
+      bottom: -800px;
+    }
+  }
+
+  &__dropdown-region {
+    display: flex;
+    flex-direction: column;
+    font-family: Proxima-Nova, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    row-gap: $dropdown-cities-row-gap;
+  }
+
+  &__dropdown-cities {
+    display: flex;
+    flex-direction: column;
+    row-gap: $dropdown-cities-row-gap;
+  }
+
+  &__dropdown-region-name {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    font-weight: 600;
+
+    &::after {
+      display: none;
+      width: 8px;
+      height: 5px;
+      background: url("Icons/dropdown-item-arrow.svg") center no-repeat;
+      background-size: 8px 5px;
+      content: '';
+
+      @include media-large {
+        display: block;
+      }
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: .9;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white-1;
+    transition: background-color .3s ease-in-out;
+
+    &_fade {
+      background-color: transparent;
+    }
+  }
+
 
   @include media-large {
     margin-bottom: 20px;

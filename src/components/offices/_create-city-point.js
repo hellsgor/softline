@@ -36,5 +36,3 @@ export function createCityPoint(region) {
 
   return cityPoint;
 }
-
-// 139 / 113
