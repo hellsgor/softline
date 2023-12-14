@@ -12,10 +12,14 @@
   margin: 0 auto;
 
   @include media-small {
-    max-width: 91%;
+    max-width: 98%;
   }
 
   @include media-extra-small {
+  }
+
+  @media (max-width: 320px) {
     max-width: 290px;
+
   }
 }

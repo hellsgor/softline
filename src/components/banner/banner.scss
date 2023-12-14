@@ -55,10 +55,15 @@
     }
 
     @include media-small {
+      top: 50%;
+      left: 26px;
+      row-gap: 20px;
+    }
+
+    @include media-extra-small {
       top: 40px;
       left: 5px;
       transform: unset;
-      row-gap: 20px;
     }
   }
 

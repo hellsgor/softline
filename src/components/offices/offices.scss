@@ -1,0 +1,413 @@
+.offices {
+  $dropdown-cities-row-gap: 16px;
+  $dropdown-move-top: 800px;
+
+  $dropdown-padding: (
+    x-large: 70px,
+    large: 70px,
+    small: 24px,
+    extra-small: 5px
+  );
+
+  $dropdown-top: (
+    default: 99px,
+    x-large: 141px,
+    large: 0px,
+    small: 0px,
+    extra-small: 0px
+  );
+
+  margin-bottom: 100px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 90px;
+
+    @include media-x-large {
+      row-gap: 40px;
+    }
+
+    @include media-small {
+      row-gap: 8px;
+    }
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    padding: 28px 70px 28px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white-1;
+    @include shadow($shadow-offices-header);
+
+    @include media-x-large {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 20px;
+    }
+
+    @include media-large {
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+
+    @include media-small {
+      padding-top: 16px;
+      row-gap: 17px;
+    }
+  }
+
+  &__select {
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $accent-hover;
+
+        svg path {
+          stroke: $accent-hover;
+        }
+      }
+    }
+
+    @include media-large {
+      padding-left: 70px;
+    }
+
+    @include media-medium {
+      column-gap: 6px;
+    }
+
+    @include media-small {
+      padding-left: 24px;
+    }
+
+    @include media-extra-small {
+      padding-left: 5px;
+      column-gap: 5px;
+    }
+  }
+
+  &__select-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+
+    @include media-medium {
+      font-size: 20px;
+    }
+  }
+
+  &__select-arrow {
+    display: flex;
+    $size: 24px;
+    width: $size;
+    height: $size;
+    align-items: center;
+    justify-content: center;
+    transition: transform .1s ease-in-out;
+
+    svg {
+      overflow: hidden;
+      width: $size;
+      height: $size;
+
+      path {
+        transition: stroke .3s ease-in-out;
+      }
+    }
+
+    &_rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__regions {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media-x-large {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include media-large {
+      overflow-x: scroll;
+      height: 49px;
+      padding-right: 70px;
+      padding-left: 70px;
+      justify-content: flex-start;
+    }
+
+    @include media-small {
+      height: 38px;
+      padding-right: 24px;
+      padding-left: 24px;
+      column-gap: 16px;
+    }
+
+    @include media-extra-small {
+      height: 38px;
+      padding-right: 5px;
+      padding-left: 5px;
+      column-gap: 17px;
+    }
+  }
+
+  &__map-wrapper {
+    overflow-x: scroll;
+    width: 100%;
+    height: 610px;
+    padding: 0 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media-medium {
+      height: 448px;
+    }
+  }
+
+  &__map {
+    position: relative;
+    width: 1190px;
+    height: 600px;
+    background: url("Images/map.svg") top left no-repeat;
+    background-size: contain;
+
+    @include media-x-large {
+      width: 1140px;
+    }
+
+    @include media-medium {
+      width: 862px;
+      height: 434px;
+    }
+  }
+
+  &__city-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-2;
+    background-color: $black-1;
+  }
+
+  &__city-point-name {
+    position: absolute;
+    left: 50%;
+    font-weight: 600;
+    line-height: 100%;
+    white-space: nowrap;
+    transform: translateX(-50%);
+
+    @mixin modifierStyles($font-size, $indent) {
+      font-size: $font-size;
+
+      &[data-point-name="khabarovsk"],
+      &[data-point-name="tomsk"] {
+        top: -(calc(14px + 2px));
+      }
+
+      &:not([data-point-name="khabarovsk"]),
+      &:not([data-point-name="tomsk"]) {
+        bottom: -(calc($font-size + $indent));
+      }
+    }
+
+    &_small {
+      @include modifierStyles(12px, 4px);
+    }
+
+    &_medium {
+      @include modifierStyles(14px, 4px);
+    }
+
+    &_large {
+      @include modifierStyles(16px, 5px);
+    }
+
+    &[data-point-name="kaliningrad"] {
+      @include modifierStyles(12px, 6px);
+    }
+  }
+
+
+  &__dropdown {
+    position: absolute;
+    top: map-get($dropdown-top, default);
+    right: 0;
+    left: 0;
+    z-index: 290;
+    display: flex;
+    padding: 30px map-get($dropdown-padding, default);
+    justify-content: center;
+    @include shadow($shadow-offices-dropdown);
+    column-gap: 24px;
+    background-color: $white-1;
+    transition: top 0.3s ease-in-out;
+
+    &_move {
+      top: $dropdown-move-top;
+    }
+
+    @include media-x-large {
+      top: map-get($dropdown-top, x-large);
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+
+    @include media-large {
+      top: map-get($dropdown-top, large);
+      padding: 73px map-get($dropdown-padding, large) 30px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      row-gap: 15px;
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+
+    @include media-small {
+      top: map-get($dropdown-top, small);
+      padding: 53px 24px map-get($dropdown-padding, small);
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+
+    @include media-extra-small {
+      top: map-get($dropdown-top, extra-small);
+      padding: 53px 5px 15px;
+
+      &_move {
+        top: $dropdown-move-top;
+      }
+    }
+  }
+
+  &__dropdown-region {
+    display: flex;
+    flex-direction: column;
+    font-family: Proxima-Nova, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    row-gap: $dropdown-cities-row-gap;
+
+    @include media-small {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &__dropdown-cities {
+    display: none;
+    overflow-y: hidden;
+    height: 0;
+    flex-direction: column;
+    transition: height .3s ease-in-out;
+    row-gap: $dropdown-cities-row-gap;
+
+    &_visible {
+      height: 100%;
+    }
+
+    &_flexible {
+      display: flex;
+    }
+  }
+
+  &__dropdown-region-name {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:not([data-region-name="moskva"]) {
+      &::after {
+        display: none;
+        width: 8px;
+        height: 5px;
+        background: url("Icons/dropdown-item-arrow.svg") center no-repeat;
+        background-size: 8px 5px;
+        content: '';
+
+        @include media-large {
+          display: block;
+        }
+      }
+    }
+
+
+    @media(hover: hover) {
+      &:hover {
+        color: $accent-hover;
+
+        &::after {
+          background-image: url("Icons/dropdown-item-arrow-hovered.svg");
+        }
+      }
+    }
+  }
+
+  &__dropdown-city {
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    @media (hover: hover) {
+      &:hover {
+        color: $accent-hover;
+      }
+    }
+
+    &:active {
+      color: $accent;
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: .9;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white-1;
+    transition: background-color .3s ease-in-out;
+
+    &_fade {
+      background-color: transparent;
+    }
+  }
+
+  @include media-large {
+    margin-bottom: 20px;
+  }
+
+  @include media-extra-small {
+    margin-bottom: -34px;
+  }
+}
