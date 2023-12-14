@@ -36,19 +36,6 @@
     transform: translateY(-50%);
     row-gap: 60px;
 
-    h2 {
-      font-size: 56px;
-      line-height: 100%;
-
-      @include media-medium {
-        font-size: 32px;
-      }
-
-      @include media-small {
-        font-size: 28px;
-      }
-    }
-
     @include media-medium {
       max-width: 494px;
       row-gap: 28px;

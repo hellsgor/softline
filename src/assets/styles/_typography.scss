@@ -26,3 +26,16 @@ h6,
 .heading-6 {
   font-weight: 600;
 }
+
+h2 {
+  font-size: 56px;
+  line-height: 100%;
+
+  @include media-medium {
+    font-size: 32px;
+  }
+
+  @include media-small {
+    font-size: 28px;
+  }
+}
