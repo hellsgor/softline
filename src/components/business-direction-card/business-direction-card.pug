@@ -1,0 +1,16 @@
+mixin business-direction-card(imageName, cardTitle, cardText)
+
+  - const jpg1x = require(`Images/business-direction/${imageName}-1x.jpg`);
+  - const jpg2x = require(`Images/business-direction/${imageName}-2x.jpg`);
+  - const webp1x = require(`Images/business-direction/${imageName}-1x.webp`);
+  - const webp2x = require(`Images/business-direction/${imageName}-2x.webp`);
+
+  article.direction-card&attributes(attributes)
+    picture.direction-card__picture
+      source(srcset=`${webp1x} 1x, ${webp2x} 2x` type='image/webp')
+      source(srcset=`${jpg1x} 1x, ${jpg2x} 2x` type='image/jpg')
+      img(alt=`${imageName}` src=require(`Images/business-direction/${imageName}-1x.jpg`))
+    .direction-card__text-content
+      .direction-card__title
+        p #{cardTitle}
+      p.direction-card__description #{cardText}
