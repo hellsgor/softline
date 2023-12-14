@@ -14,6 +14,9 @@ const dropdown = document.getElementById('offices-dropdown');
 const ollRegionsTab = createTab('Все');
 const officesSelect = document.getElementById('offices__select');
 const backdrop = document.getElementById('offices__backdrop');
+const officesSelectArrow = document
+  .getElementById('offices__select')
+  .querySelector('.offices__select-arrow');
 
 ollRegionsTab.classList.add('button_active-tab');
 tabsBlock.appendChild(ollRegionsTab);
@@ -46,6 +49,8 @@ if (document.documentElement.scrollWidth <= 375) {
 
 backdrop.addEventListener('click', () => {
   hideDropdown(backdrop, dropdown);
+  if (officesSelectArrow.classList.contains('offices__select-arrow_rotate'))
+    officesSelectArrow.classList.remove('offices__select-arrow_rotate');
 });
 
 officesSelect.addEventListener('click', () => {
@@ -53,15 +58,11 @@ officesSelect.addEventListener('click', () => {
     backdrop.classList.contains('visually-hidden') &&
     dropdown.classList.contains('visually-hidden')
   ) {
-    officesSelect
-      .querySelector('.offices__select-arrow')
-      .classList.add('offices__select-arrow_rotate');
+    officesSelectArrow.classList.add('offices__select-arrow_rotate');
     showBackdrop(backdrop);
     showDropdown(dropdown);
   } else {
-    officesSelect
-      .querySelector('.offices__select-arrow')
-      .classList.remove('offices__select-arrow_rotate');
+    officesSelectArrow.classList.remove('offices__select-arrow_rotate');
     hideDropdown(backdrop, dropdown);
   }
 });

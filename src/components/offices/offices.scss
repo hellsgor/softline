@@ -8,7 +8,7 @@
     flex-direction: column;
     row-gap: 90px;
 
-    @include media-large {
+    @include media-x-large {
       row-gap: 40px;
     }
 
