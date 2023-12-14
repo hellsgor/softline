@@ -6,6 +6,7 @@ import {showDropdown} from 'Components/offices/_show-dropdown';
 import {showBackdrop} from 'Components/offices/_show-backdrop';
 import {hideDropdown} from 'Components/offices/_hide-dropdown';
 import {addDropdownRegionCities} from 'Components/offices/_add-dropdown-region-cities';
+import {changeRegion} from 'Components/offices/_change-region';
 
 const map = document.getElementById('offices-map');
 const tabsBlock = document.getElementById('offices-regions');
@@ -64,3 +65,10 @@ officesSelect.addEventListener('click', () => {
     hideDropdown(backdrop, dropdown);
   }
 });
+
+const regionTabs = tabsBlock.querySelectorAll('.button_tab');
+tabsBlock.querySelectorAll('.button_tab').forEach((regionTab) =>
+  regionTab.addEventListener('click', () => {
+    changeRegion(regionTab, regionTabs, map);
+  })
+);
