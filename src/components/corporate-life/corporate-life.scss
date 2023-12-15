@@ -1,3 +1,5 @@
+@import 'Components/carousel-item/carousel-item.scss';
+
 .corporate-life {
   &__row {
     display: flex;
@@ -9,5 +11,9 @@
   &__navigation {
     display: flex;
     column-gap: 20px;
+  }
+
+  &__carousel {
+    margin-bottom: 28px;
   }
 }

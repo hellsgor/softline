@@ -1,11 +1,17 @@
 secttion.corporate-life
   .container
-    .corporate-life__wrapper
+    .corporate-life__wrapper.swiper
       .corporate-life__row
         h2 Корпоративная жизнь
         .corporate-life__navigation
           include UIKit/button/button.pug
-          +button('carousel-prew', '', 'button', '', 'arrow-left')(class='button_icon-only')
-          +button('carousel-next', '', 'button', '', 'arrow-right')(class='button_icon-only')
-      .corporate-life__carousel
-      .corporate-life__pagination
+          +button('carousel-prew', '', 'button', '', 'arrow-left')(class='button_icon-only swiper-button-prev')
+          +button('carousel-next', '', 'button', '', 'arrow-right')(class='button_icon-only swiper-button-next')
+      .corporate-life__carousel.swiper-wrapper
+        include Components/carousel-item/carousel-item.pug
+        +carousel-item('slide1')
+        +carousel-item('slide2')
+        +carousel-item('slide3')
+        +carousel-item('slide4')
+        +carousel-item('slide5')
+      .corporate-life__pagination.swiper-pagination
