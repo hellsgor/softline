@@ -4,6 +4,10 @@
 
   &__wrapper {
     padding: 0 70px;
+
+    @include media-small {
+      padding: 0 5px;
+    }
   }
 
   &__row {
@@ -11,11 +15,19 @@
     margin-bottom: 55px;
     align-items: center;
     justify-content: space-between;
+
+    @include media-extra-small {
+      margin-bottom: 15px;
+    }
   }
 
   &__navigation {
     display: flex;
     column-gap: 20px;
+
+    @include media-extra-small {
+      display: none;
+    }
   }
 
   &__carousel,
@@ -23,6 +35,11 @@
     width: 1110px;
     height: 834px;
     margin-bottom: 28px;
+
+    @include media-large {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .swiper-button-prev,
@@ -49,6 +66,9 @@
     column-gap: 10px;
     text-align: start;
 
+    @include media-extra-small {
+      display: none;
+    }
   }
 
   .swiper-pagination-bullet {

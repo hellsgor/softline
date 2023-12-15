@@ -73,6 +73,7 @@
   &_icon-only {
     display: flex;
     width: 56px;
+    min-width: unset;
     height: 56px;
     padding: 0;
     border-radius: $radius-2;
