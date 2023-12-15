@@ -1,6 +1,4 @@
 .compensation-package-item {
-  $circle-size: 110px;
-
   display: flex;
   width: 100%;
   max-width: 178px;
@@ -9,8 +7,9 @@
   row-gap: 12px;
 
   @include media-medium {
-    $circle-size: 80px;
+    width: 80px;
     max-width: 120px;
+    height: 80px;
 
     &:nth-child(5) {
       svg {
@@ -21,8 +20,8 @@
 
   &__circle {
     display: flex;
-    width: $circle-size;
-    height: $circle-size;
+    width: 110px;
+    height: 110px;
     border-radius: $radius-2;
     align-items: center;
     justify-content: center;
@@ -41,8 +40,8 @@
 
 
     @include media-medium {
-      width: $circle-size;
-      height: $circle-size;
+      width: 80px;
+      height: 80px;
     }
   }
 
