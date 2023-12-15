@@ -1,0 +1,11 @@
+mixin carousel-item(imageName)
+
+  - const jpg1x = require(`Images/corp-life/${imageName}-1x.jpg`);
+  - const jpg2x = require(`Images/corp-life/${imageName}-2x.jpg`);
+  - const webp1x = require(`Images/corp-life/${imageName}-1x.webp`);
+  - const webp2x = require(`Images/corp-life/${imageName}-2x.webp`);
+
+  picture.carousel-item&attributes(attributes)
+    source(srcset=`${webp1x} 1x, ${webp2x} 2x` type='image/webp')
+    source(srcset=`${jpg1x} 1x, ${jpg2x} 2x` type='image/jpg')
+    img(alt=`${imageName}` src=require(`Images/corp-life/${imageName}-1x.jpg`))
