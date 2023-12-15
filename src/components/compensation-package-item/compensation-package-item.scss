@@ -1,0 +1,54 @@
+.compensation-package-item {
+  display: flex;
+  width: 100%;
+  max-width: 178px;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+
+  @include media-medium {
+    width: 120px;
+
+    &:nth-child(5) {
+      svg {
+        width: 50px !important;
+      }
+    }
+  }
+
+  &__circle {
+    display: flex;
+    width: 110px;
+    height: 110px;
+    border-radius: $radius-2;
+    align-items: center;
+    justify-content: center;
+    background-color: $icons-background-color;
+
+    svg {
+      path {
+        stroke: $accent;
+      }
+
+      @include media-medium {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+
+    @include media-medium {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    line-height: 110%;
+
+    @include media-medium {
+      font-size: 16px;
+    }
+  }
+}

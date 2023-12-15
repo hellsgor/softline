@@ -1,0 +1,19 @@
+@import 'Layouts/main-layout.scss';
+
+@import 'src/UIKit/button/button.scss';
+
+.ui-kit {
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  hr {
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+}
+

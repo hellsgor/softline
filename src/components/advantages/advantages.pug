@@ -1,0 +1,27 @@
+section.advantages
+  .container
+    .advantages__wrapper
+      include Components/advantages-item/advantages-item.pug
+      +advantages-item({
+        prefix: '>',
+        title: '30 лет',
+        description: 'на IT-рынке'
+      })
+      +advantages-item({
+        title: '4600',
+        description: 'сотрудников в России'
+      })
+      +advantages-item({
+        title: '25',
+        description: 'городов России'
+      })
+      +advantages-item({
+        title: '2000',
+        postfix: '+',
+        description: 'разработчиков'
+      })
+      +advantages-item({
+        title: '3000',
+        postfix: '+',
+        description: 'сотрудников ежегодно проходят оценку и обучение'
+      })

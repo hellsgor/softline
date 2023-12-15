@@ -1,0 +1,33 @@
+@mixin shadow($some-shadow) {
+  box-shadow: $some-shadow;
+}
+
+@mixin media-x-large {
+  @media (max-width: $x-large) {
+    @content;
+  }
+}
+
+@mixin media-large {
+  @media (max-width: $large) {
+    @content;
+  }
+}
+
+@mixin media-medium {
+  @media (max-width: $medium) {
+    @content;
+  }
+}
+
+@mixin media-small {
+  @media (max-width: $small) {
+    @content;
+  }
+}
+
+@mixin media-extra-small {
+  @media (max-width: $extra-small) {
+    @content;
+  }
+}

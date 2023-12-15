@@ -1,0 +1,23 @@
+extends Layouts/main-layout.pug
+
+block variables
+  - let title = 'Softline';
+  - let header = true;
+  - let footer = false;
+  - let pageClassName = 'main-page';
+
+block styles
+  link(rel="preload" href=require('Fonts/ProximaNova-Condensed-Semibold.woff2') as="font")
+  link(rel='stylesheet' href=require('./main.scss'))
+block content
+  main.page__main(class=pageClassName)
+    include Components/banner/banner.pug
+    include Components/about/about.pug
+    include Components/advantages/advantages.pug
+    include Components/offices/offices.pug
+    include Components/mission/mission.pug
+    include Components/business-directions/business-directions.pug
+    include Components/compensation-package/compensation-package.pug
+    include Components/corporate-life/corporate-life.pug
+block scripts
+  script(src=require('./main.js') defer)

@@ -1,0 +1,19 @@
+- const jpg1x = require('Images/bunner-bg/bunner-bg-1x.jpg');
+- const jpg2x = require('Images/bunner-bg/bunner-bg-2x.jpg');
+- const webp1x = require('Images/bunner-bg/bunner-bg-1x.webp');
+- const webp2x = require('Images/bunner-bg/bunner-bg-2x.webp');
+
+section.banner
+  .container
+    .banner__wrapper
+      picture.banner__background
+        source(srcset=`${webp1x} 1x, ${webp2x} 2x` type='image/webp')
+        source(srcset=`${jpg1x} 1x, ${jpg2x} 2x` type='image/jpg')
+        img(alt='Some bg' src=require('Images/bunner-bg/bunner-bg-1x.jpg'))
+      .banner__content
+        h2 Поставщик услуг цифровой трансформации и&nbsp;кибербезопасности
+        .banner__buttons
+          include UIKit/button/button.pug
+          +button('bunner-button', 'https://softline.ru', '', 'На сайт')
+          .banner__strange-stripe-on-the-layout
+

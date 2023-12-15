@@ -1,0 +1,17 @@
+secttion.corporate-life
+  .container
+    .corporate-life__wrapper.swiper
+      .corporate-life__row
+        h2 Корпоративная жизнь
+        .corporate-life__navigation
+          include UIKit/button/button.pug
+          +button('carousel-prew', '', 'button', '', 'arrow-left')(class='button_icon-only swiper-button-prev')
+          +button('carousel-next', '', 'button', '', 'arrow-right')(class='button_icon-only swiper-button-next')
+      .corporate-life__carousel.swiper-wrapper
+        include Components/carousel-item/carousel-item.pug
+        +carousel-item('slide1')(class='swiper-slide')
+        +carousel-item('slide2')(class='swiper-slide')
+        +carousel-item('slide3')(class='swiper-slide')
+        +carousel-item('slide4')(class='swiper-slide')
+        +carousel-item('slide5')(class='swiper-slide')
+      .corporate-life__pagination.swiper-pagination

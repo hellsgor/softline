@@ -1,0 +1,83 @@
+@mixin setHeight($height) {
+  width: 100%;
+  height: $height;
+
+  img {
+    height: $height;
+    object-fit: cover;
+  }
+}
+
+.banner {
+  margin-bottom: 100px;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__background {
+    $height: 600px;
+
+    @include setHeight($height);
+
+    @include media-small {
+      $height: 300px;
+      @include setHeight($height);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    display: flex;
+    max-width: 709px;
+    flex-direction: column;
+    transform: translateY(-50%);
+    row-gap: 60px;
+
+    @include media-medium {
+      max-width: 494px;
+      row-gap: 28px;
+    }
+
+    @include media-small {
+      top: 50%;
+      left: 26px;
+      row-gap: 20px;
+    }
+
+    @include media-extra-small {
+      top: 40px;
+      left: 5px;
+      transform: unset;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    @include media-extra-small {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 20px;
+    }
+  }
+
+  &__strange-stripe-on-the-layout {
+    opacity: 0.5;
+    width: 153px;
+    height: 1px;
+    background-color: $white-1;
+
+    @include media-extra-small {
+      width: 122px;
+    }
+  }
+
+  @include media-small {
+    margin-bottom: 60px;
+  }
+}

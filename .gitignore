@@ -1,0 +1,7 @@
+node_modules
+dist
+build
+.idea
+todo
+
+USED-IN-THE-PROJECT.md

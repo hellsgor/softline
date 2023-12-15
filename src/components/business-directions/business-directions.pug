@@ -1,0 +1,12 @@
+section.business-directions
+  .container
+    .business-directions__wrapper
+      h2 Направления бизнеса
+      .business-directions__cards
+        include Components/business-direction-card/business-direction-card.pug
+        +business-direction-card('building', 'Решения Softline', 'ГК Softline предлагает клиентам собственную линейку оборудования (ПК, серверы, торговое оборудование и проч.), разработку программных продуктов, облачных решений, решений в области информационной безопасности.')(class='business-directions__card')
+        +business-direction-card('lock', 'Кибербезопасность', 'Softline обладает всеми необходимыми государственными лицензиями для организации проектов по информационной безопасности и аттестации.')(class='business-directions__card')
+        +business-direction-card('tablet', 'Импортозамещение', 'ГК Softline обладает широчайшим портфелем решений и услуг для импортозамещения, включая ПО и оборудование собственного производства.')(class='business-directions__card')
+        +business-direction-card('cloud', 'Облачные решения', 'Softline использует современные облачные решения как российских, так и международных вендоров для масштабирования бизнеса своих клиентов. Подписки, услуги, трансформация.')(class='business-directions__card')
+        +business-direction-card('programming', 'Цифровая трансформация и разработка ПО', 'Softline использует современные технологи и новые возможности для увеличения производительности бизнеса заказчика. В штате ГК Softline - 2000+ разработчиков, которые трансформируют ПО под нужды конкретного предприятия.')(class='business-directions__card')
+        +business-direction-card('support', 'Техническая поддержка Softline', '200+ инженеров, 24 часа в сутки, 7 дней в неделю, 12 месяцев в году, сервисное партнерство с 30+ мировыми производителями.')(class='business-directions__card')

@@ -1,0 +1,26 @@
+@import 'normalize.css';
+@import 'Styles/reset';
+@import 'Styles/variables';
+@import 'Styles/mixins';
+@import 'Styles/fonts';
+@import 'Styles/typography';
+@import 'Styles/visually-hidden';
+@import '../../../node_modules/swiper/swiper-bundle.min.css';
+
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  @include media-small {
+    max-width: 98%;
+  }
+
+  @include media-extra-small {
+  }
+
+  @media (max-width: 320px) {
+    max-width: 290px;
+
+  }
+}

@@ -1,0 +1,39 @@
+@import 'Components/advantages-item/advantages-item.scss';
+
+.advantages {
+  margin-bottom: 101px;
+
+  &__wrapper {
+
+    display: flex;
+    padding: 0 110px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 185px;
+    row-gap: 85px;
+
+    @include media-x-large {
+      column-gap: 140px;
+    }
+
+    @include media-medium {
+      padding: 0 70px;
+      column-gap: 120px;
+    }
+
+    @include media-small {
+      padding: 0 8px;
+      column-gap: 24px;
+      row-gap: 24px;
+    }
+
+    @include media-extra-small {
+      column-gap: 4px;
+    }
+  }
+
+  @include media-small {
+    margin-bottom: 51px;
+  }
+}
