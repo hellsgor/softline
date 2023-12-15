@@ -1,0 +1,29 @@
+.compensation-package-item {
+  $circle-size: 110px;
+
+  display: flex;
+  width: 100%;
+  max-width: 178px;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+
+  &__circle {
+    display: flex;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $radius-2;
+    align-items: center;
+    justify-content: center;
+    background-color: $icons-background-color;
+
+    svg path {
+      stroke: $accent;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    line-height: 110%;
+  }
+}
