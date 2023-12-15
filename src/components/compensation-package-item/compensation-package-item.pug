@@ -1,0 +1,6 @@
+mixin compensation-package-item(itemTitle, iconName)
+  .compensation-package-item
+    .compensation-package-item__circle
+      include Components/svg-icon/svg-icon.pug
+      +svgIcon(iconName)
+    .compensation-package-item__title #{itemTitle}

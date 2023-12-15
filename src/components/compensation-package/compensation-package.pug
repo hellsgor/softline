@@ -1,0 +1,19 @@
+section.compensation-package
+  .container
+    .compensation-package__wrapper
+      h2 Компенсационный пакет
+      .compensation-package__items-wrapper
+        include Components/compensation-package-item/compensation-package-item.pug
+        +compensation-package-item('ДМС', 'dms')
+        +compensation-package-item('Выходной в\u00A0день\u00A0рождения', 'birthday')
+        +compensation-package-item('Корпоративная мобильная связь', 'phone')
+        +compensation-package-item('Корпоративные скидки на спорт', 'dumbbell')
+        +compensation-package-item('LTI', 'lti')
+      hr
+      h3
+        span Программа дополнительной мотивации
+        span  доплата 12% от суммы
+      .compensation-package__motivation-wrapper
+        +compensation-package-item('Оргтехники', 'print')
+        +compensation-package-item('ДМС', 'dms')
+        +compensation-package-item('Ипотеки', 'house')
