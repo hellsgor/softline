@@ -8,6 +8,17 @@
   align-items: center;
   row-gap: 12px;
 
+  @include media-medium {
+    $circle-size: 80px;
+    max-width: 120px;
+
+    &:nth-child(5) {
+      svg {
+        width: 50px !important;
+      }
+    }
+  }
+
   &__circle {
     display: flex;
     width: $circle-size;
@@ -17,13 +28,30 @@
     justify-content: center;
     background-color: $icons-background-color;
 
-    svg path {
-      stroke: $accent;
+    svg {
+      path {
+        stroke: $accent;
+      }
+
+      @include media-medium {
+        width: 35px;
+        height: auto;
+      }
+    }
+
+
+    @include media-medium {
+      width: $circle-size;
+      height: $circle-size;
     }
   }
 
   &__title {
     text-align: center;
     line-height: 110%;
+
+    @include media-medium {
+      font-size: 16px;
+    }
   }
 }
