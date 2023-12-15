@@ -1,0 +1,11 @@
+secttion.corporate-life
+  .container
+    .corporate-life__wrapper
+      .corporate-life__row
+        h2 Корпоративная жизнь
+        .corporate-life__navigation
+          include UIKit/button/button.pug
+          +button('carousel-prew', '', 'button', '', 'arrow-left')(class='button_icon-only')
+          +button('carousel-next', '', 'button', '', 'arrow-right')(class='button_icon-only')
+      .corporate-life__carousel
+      .corporate-life__pagination

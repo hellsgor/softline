@@ -69,4 +69,21 @@
       }
     }
   }
+
+  &_icon-only {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: $radius-2;
+    align-items: center;
+    justify-content: center;
+    background-color: $carousel-buttons-bg-color;
+
+    @media(hover: hover) {
+      &:hover {
+        background-color: $gray-1;
+      }
+    }
+  }
 }

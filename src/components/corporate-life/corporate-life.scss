@@ -1,0 +1,13 @@
+.corporate-life {
+  &__row {
+    display: flex;
+    margin-bottom: 55px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__navigation {
+    display: flex;
+    column-gap: 20px;
+  }
+}

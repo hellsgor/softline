@@ -1,4 +1,4 @@
-mixin button(buttonID, href, buttonType, buttonText)
+mixin button(buttonID, href, buttonType, buttonText, iconName='')
   if href
     a.button(
       href=href,
@@ -7,3 +7,7 @@ mixin button(buttonID, href, buttonType, buttonText)
     button.button(
       type=buttonType,
       id=buttonID)&attributes(attributes) #{buttonText}
+
+      if iconName
+        include Components/svg-icon/svg-icon.pug
+        +svgIcon(iconName)
